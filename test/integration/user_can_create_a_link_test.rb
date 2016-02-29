@@ -13,6 +13,6 @@ class UserCanCreateALinkTest < ActionDispatch::IntegrationTest
     assert_equal current_path, "/links"
     assert_equal (link_count + 1), Link.count
     assert page.has_content? "Google"
-    assert page.has_content? "Read: false"
+    assert page.has_content? "Mark as read"
   end
 end
