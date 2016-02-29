@@ -1,0 +1,9 @@
+<div>
+  <% if link.read %>
+    <%= link_to link.title, link.url, class: "read link" %>
+    [ <a href="#" class="update" data-id="<%= link.id %>" data-update-to="false">Mark as unread</a> ]
+  <% else %>
+    <%= link_to link.title, link.url, class: "unread link" %>
+    [ <a href="#" class="update" data-id="<%= link.id %>" data-update-to="true">Mark as read</a> ]
+  <% end %>
+</div>

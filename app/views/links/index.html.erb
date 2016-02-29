@@ -18,9 +18,6 @@
 
   <h2>All Links</h2>
   <% @links.each do |link| %>
-    <div>
-      <a href="<%= link.url %>"><%= link.title %></a>
-      <p>Read: <strong><%= link.read %></strong></p>
-    </div>
+    <%= render partial: "link", locals: { link: link } %>
   <% end %>
 </div>
