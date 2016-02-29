@@ -2,6 +2,8 @@ class Link < ActiveRecord::Base
   belongs_to :user
 
   validate :url_is_properly_formatted
+  validates :url, presence: true,
+                  uniqueness: true
   validates :title, presence: true,
                     uniqueness: true
 
@@ -9,6 +11,6 @@ class Link < ActiveRecord::Base
     uri = URI.parse(self.url)
     uri.kind_of?(URI::HTTP)
   rescue URI::InvalidURIError
-    false
+    errors.add(:url, "improper format")
   end
 end

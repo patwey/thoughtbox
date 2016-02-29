@@ -1,7 +1,11 @@
 class LinksController < ApplicationController
   def index
     @link = Link.new
-    @links = current_user.links || []
+    if current_user
+      @links = current_user.links
+    else
+      @links = []
+    end
   end
 
   def create

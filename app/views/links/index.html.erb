@@ -1,20 +1,26 @@
 <div>
+  <% if current_user %>
   <h2>Submit a Link</h2>
-  <%= form_for @link do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= form_for @link do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
 
-    <br>
+      <br>
 
-    <%= f.label :url %>
-    <%= f.url_field :url %>
+      <%= f.label :url %>
+      <%= f.url_field :url %>
 
-    <br><br>
+      <br><br>
 
-    <%= f.submit "Submit link" %>
+      <%= f.submit "Submit link" %>
+    <% end %>
   <% end %>
 
   <h2>All Links</h2>
-  <%= @links.each do |link| %>
+  <% @links.each do |link| %>
+    <div>
+      <a href="<%= link.url %>"><%= link.title %></a>
+      <p>Read: <strong><%= link.read %></strong></p>
+    </div>
   <% end %>
 </div>
