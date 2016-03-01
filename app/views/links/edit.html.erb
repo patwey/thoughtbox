@@ -1,0 +1,15 @@
+<%= form_for @link do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <br>
+
+  <%= f.label :url %>
+  <%= f.url_field :url %>
+
+  <br><br>
+
+  <%= f.submit "Update link" %>
+<% end %>
+
+<%= link_to "Go back", links_path %>

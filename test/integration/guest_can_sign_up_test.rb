@@ -11,7 +11,7 @@ class GuestCanSignUpTest < ActionDispatch::IntegrationTest
     fill_in "Password confirmation", with: "password"
     click_button "Create Account"
 
-    assert_equal current_path, "/links"
+    assert_equal "/links", current_path
     assert page.has_content? "All Links"
   end
 
@@ -19,7 +19,7 @@ class GuestCanSignUpTest < ActionDispatch::IntegrationTest
     create_test_account # creates account with email: test@example.com
     create_test_account
 
-    assert_equal current_path, "/users/new"
+    assert_equal "/users/new", current_path
     assert page.has_content? "Invalid login"
   end
 
@@ -31,7 +31,7 @@ class GuestCanSignUpTest < ActionDispatch::IntegrationTest
     fill_in "Password confirmation", with: "not password"
     click_button "Create Account"
 
-    assert_equal current_path, "/users/new"
+    assert_equal "/users/new", current_path
     assert page.has_content? "Invalid login"
   end
 end

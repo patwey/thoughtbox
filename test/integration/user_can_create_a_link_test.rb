@@ -10,7 +10,7 @@ class UserCanCreateALinkTest < ActionDispatch::IntegrationTest
     fill_in "Url", with: "http://google.com"
     click_button "Submit link"
 
-    assert_equal current_path, "/links"
+    assert_equal "/links", current_path
     assert_equal (link_count + 1), Link.count
     assert page.has_content? "Google"
     assert page.has_content? "Mark as read"

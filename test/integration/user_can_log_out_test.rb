@@ -14,7 +14,7 @@ class UserCanLogOutTest < ActionDispatch::IntegrationTest
 
     click_link "Log out"
 
-    assert_equal current_path, "/login"
+    assert_equal "/login", current_path
     assert page.has_content? "Logged out"
   end
 

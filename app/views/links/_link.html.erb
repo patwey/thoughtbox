@@ -6,4 +6,6 @@
     <%= link_to link.title, link.url, class: "unread link" %>
     [ <a href="#" class="update" data-id="<%= link.id %>" data-update-to="true">Mark as read</a> ]
   <% end %>
+
+  <%= button_to "Edit", edit_link_path(link), { method: :get } %>
 </div>

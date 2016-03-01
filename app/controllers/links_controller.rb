@@ -21,8 +21,17 @@ class LinksController < ApplicationController
 
   def update
     @link = current_user.links.find(params[:id])
-    @link.update(link_params)
-    redirect_to links_path
+
+    if @link.update(link_params)
+      redirect_to links_path
+    else
+      flash[:error] = "Invalid update"
+      redirect_to edit_link_path(@link)
+    end
+  end
+
+  def edit
+    @link = current_user.links.find(params[:id])
   end
 
   private

@@ -10,7 +10,7 @@ class UserCanLogInTest < ActionDispatch::IntegrationTest
     fill_in "Password", with: "password"
     click_button "Log in"
 
-    assert_equal current_path, "/links"
+    assert_equal "/links", current_path
     assert page.has_content? "All Links"
   end
 
@@ -22,7 +22,7 @@ class UserCanLogInTest < ActionDispatch::IntegrationTest
     fill_in "Password", with: "password"
     click_button "Log in"
 
-    assert_equal current_path, "/login"
+    assert_equal "/login", current_path
     assert page.has_content? "Invalid login"
   end
 
@@ -34,7 +34,7 @@ class UserCanLogInTest < ActionDispatch::IntegrationTest
     fill_in "Password", with: "bad password"
     click_button "Log in"
 
-    assert_equal current_path, "/login"
+    assert_equal "/login", current_path
     assert page.has_content? "Invalid login"
   end
 end
