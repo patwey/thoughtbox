@@ -17,6 +17,11 @@
   <% end %>
 
   <h2>All Links</h2>
+
+  <strong>Search:</strong><input id="search" type="text" />
+
+  <br><br>
+
   <% @links.each do |link| %>
     <%= render partial: "link", locals: { link: link } %>
   <% end %>
