@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Thoughtbox2</title>
+  <title>Thoughtbox</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h1>~~~ Thoughtbox ~~~</h1>
 
 <% if current_user %>
   <%= link_to "Log out", logout_path %>
